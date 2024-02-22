@@ -7,7 +7,7 @@ from modules.pygwalker import get_df, VIS_SPEC
 
 
 st.set_page_config(
-    page_title="Position Complexity",
+    page_title="Tournament Visualizer",
     layout="wide",
     page_icon='📈'
 )
