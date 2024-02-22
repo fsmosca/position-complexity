@@ -4,6 +4,13 @@ import streamlit as st
 from modules.pygwalker import get_pyg_renderer
 
 
+st.set_page_config(
+    page_title="Tournament Visualizer",
+    layout="wide",
+    page_icon='📈'
+)
+
+
 init_streamlit_comm()
 
 
