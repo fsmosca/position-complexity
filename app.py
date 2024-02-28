@@ -3,6 +3,7 @@ import pygwalker as pyg
 import streamlit as st
 import streamlit.components.v1 as components
 import streamlit as st
+from streamlit import session_state as ss
 from modules.pygwalker import get_df, VIS_SPEC
 
 
@@ -13,11 +14,17 @@ st.set_page_config(
 )
 
 
+if 'selected_pos' not in ss:
+    ss.selected_pos = None
+
+
 def main():
     init_streamlit_comm()
 
     st.sidebar.page_link('app.py', label='Home', icon='🏡')
     st.sidebar.page_link('pages/explorer.py', label='Explorer', icon='🏝️')
+    st.sidebar.page_link('pages/positions.py', label='Positions', icon='💫')
+    st.sidebar.page_link('pages/generator.py', label='Generator', icon='🌀')
 
     st.title('Data Visualizer')
 
