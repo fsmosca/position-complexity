@@ -5,6 +5,7 @@ import streamlit.components.v1 as components
 import streamlit as st
 from streamlit import session_state as ss
 from modules.pygwalker import get_df, VIS_SPEC
+from modules.menu import get_menu
 
 
 st.set_page_config(
@@ -21,12 +22,9 @@ if 'selected_pos' not in ss:
 def main():
     init_streamlit_comm()
 
-    st.sidebar.page_link('app.py', label='Home', icon='🏡')
-    st.sidebar.page_link('pages/explorer.py', label='Explorer', icon='🏝️')
-    st.sidebar.page_link('pages/positions.py', label='Positions', icon='💫')
-    st.sidebar.page_link('pages/generator.py', label='Generator', icon='🌀')
+    get_menu()
 
-    st.title('Data Visualizer')
+    st.title('✨ Data Visualizer')
 
     st.markdown('''
 **:trophy: [Freestyle Chess](https://www.freestyle-chess.com/) G.O.A.T. Challenge 2024** 
