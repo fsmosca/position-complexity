@@ -7,7 +7,7 @@ from modules.menu import get_menu
 
 st.set_page_config(
     page_title="Position Generator",
-    layout="wide",
+    layout="centered",
     page_icon='📈'
 )
 
