@@ -1,10 +1,8 @@
 import streamlit as st
 from streamlit import session_state as ss
-import pandas as pd
-import chess
-import chess.svg
 import streamlit.components.v1 as components
 from modules.chess960 import get_chess960_positions
+from modules.menu import get_menu
 
 
 st.set_page_config(
@@ -35,17 +33,14 @@ def sel_pos():
 
 
 def main():
+    get_menu()
+
     st.markdown(
     '''
-    # Chess960 Positions  
+    # 👑 Chess960 Positions  
     **Each position is analysed by Stockfish 16.1 at multipv 5.**
     '''
     )
-
-    st.sidebar.page_link('app.py', label='Home', icon='🏡')
-    st.sidebar.page_link('pages/explorer.py', label='Explorer', icon='🏝️')
-    st.sidebar.page_link('pages/positions.py', label='Positions', icon='💫')
-    st.sidebar.page_link('pages/generator.py', label='Generator', icon='🌀')
 
     df = get_chess960_positions()
     df['header'] = df['posnum'].astype(str) + ', ' + df['epd']
