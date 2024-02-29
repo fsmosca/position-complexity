@@ -2,6 +2,7 @@ import random
 
 import streamlit as st
 from modules.chess960 import get_chess960_positions
+from modules.menu import get_menu
 
 
 st.set_page_config(
@@ -12,12 +13,9 @@ st.set_page_config(
 
 
 def main():
-    st.sidebar.page_link('app.py', label='Home', icon='🏡')
-    st.sidebar.page_link('pages/explorer.py', label='Explorer', icon='🏝️')
-    st.sidebar.page_link('pages/positions.py', label='Positions', icon='💫')
-    st.sidebar.page_link('pages/generator.py', label='Generator', icon='🌀')
+    get_menu()
 
-    st.title('Random Generator')
+    st.title('🎲 Random Generator')
     st.markdown('Generates chess960 position randomly')
 
     if st.button('Generate random position', type='primary'):
